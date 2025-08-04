@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start",
+    "dev": "NODE_OPTIONS=--conditions=sui next",
+    "build": "NODE_OPTIONS=--conditions=sui next build",
+    "start": "NODE_OPTIONS=--conditions=sui next start",
     "type-check": "tsc",
     "migrate": "prisma migrate dev",
     "generate": "prisma generate"
