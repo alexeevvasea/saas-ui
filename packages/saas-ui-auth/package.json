@@ -1,0 +1,56 @@
+{
+  "name": "@saas-ui/auth",
+  "version": "3.6.6",
+  "description": "Authentication provider and components for Chakra UI",
+  "type": "module",
+  "exports": {
+    ".": {
+      "sui": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "clean": "rimraf --no-glob ./dist",
+    "build": "tsup src/index.ts --config tsup.config.ts",
+    "lint": "eslint src --ext .ts,.tsx,.js,.jsx --config ../../eslint.config.js",
+    "lint:staged": "lint-staged --allow-empty --config ../../lint-staged.config.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "files": ["dist"],
+  "sideEffects": false,
+  "publishConfig": {"access": "public"},
+  "dependencies": {
+    "@chakra-ui/utils": "^2.2.3",
+    "@saas-ui/auth-provider": "workspace:*",
+    "@saas-ui/core": "workspace:*",
+    "@saas-ui/forms": "workspace:*",
+    "@saas-ui/hooks": "workspace:*"
+  },
+  "peerDependencies": {
+    "@chakra-ui/react": ">=2.9.0 <3",
+    "@emotion/react": ">=11.0.0",
+    "@emotion/styled": ">=11.0.0",
+    "framer-motion": ">=6.0.0",
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "@types/react": "^19.0.12",
+    "@types/react-dom": "^19.0.4"
+  },
+  "author": "Eelco Wiersma <eelco@saas-ui.dev>",
+  "license": "MIT",
+  "homepage": "https://saas-ui.dev/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saas-js/saas-ui.git",
+    "directory": "packages/saas-ui-auth"
+  }
+}
