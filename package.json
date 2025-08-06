@@ -63,7 +63,7 @@
     "preinstall": "rm -rf node_modules/odiff-bin"
   },
   "devDependencies": {
-    "@chakra-ui/cli": "^3.20.0",
+    "@chakra-ui/cli": "2.5.8",
     "@changesets/cli": "^2.29.4",
     "@manypkg/get-packages": "^2.2.2",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
