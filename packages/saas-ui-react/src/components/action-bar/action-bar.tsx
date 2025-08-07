@@ -1,50 +1,29 @@
 import { forwardRef } from 'react'
 
-import { ActionBar } from '@chakra-ui/react/action-bar'
-import { Portal } from '@chakra-ui/react/portal'
+// import { ActionBar } from '@chakra-ui/react/action-bar'
+// import { Portal } from '@chakra-ui/react/portal'
 
-import { CloseButton as CloseButtonBase } from '../close-button/index.ts'
+// import { CloseButton as CloseButtonBase } from '../close-button/index.ts'
+// TODO: Placeholder, waiting for Chakra UI v3 package release
 
-interface ActionBarContentProps extends ActionBar.ContentProps {
-  portalled?: boolean
-  portalRef?: React.RefObject<HTMLElement>
-}
+interface ActionBarContentProps extends Record<string, any> {}
 
-const ActionBarContent = forwardRef<HTMLDivElement, ActionBarContentProps>(
-  function ActionBarContent(props, ref) {
-    const { children, portalled = true, portalRef, ...rest } = props
-
-    return (
-      <Portal disabled={!portalled} container={portalRef}>
-        <ActionBar.Positioner>
-          <ActionBar.Content ref={ref} {...rest} asChild={false}>
-            {children}
-          </ActionBar.Content>
-        </ActionBar.Positioner>
-      </Portal>
-    )
+export const Root = () => null
+export const SelectionTrigger = () => null
+export const Separator = () => null
+export const Content = forwardRef<HTMLDivElement, ActionBarContentProps>(
+  function Content() {
+    return null
+  },
+)
+export const CloseButton = forwardRef<HTMLButtonElement, Record<string, any>>(
+  function CloseButton() {
+    return null
   },
 )
 
-const ActionBarCloseButton = forwardRef<
-  HTMLButtonElement,
-  ActionBar.CloseTriggerProps
->(function ActionBarCloseTrigger(props, ref) {
-  return (
-    <ActionBar.CloseTrigger {...props} asChild ref={ref}>
-      <CloseButtonBase size="sm" />
-    </ActionBar.CloseTrigger>
-  )
-})
-
-export const Root = ActionBar.Root
-export const SelectionTrigger = ActionBar.SelectionTrigger
-export const Separator = ActionBar.Separator
-export const Content = ActionBarContent
-export const CloseButton = ActionBarCloseButton
-
-export type RootProps = ActionBar.RootProps
-export type SelectionTriggerProps = ActionBar.SelectionTriggerProps
-export type SeparatorProps = ActionBar.SeparatorProps
+export type RootProps = any
+export type SelectionTriggerProps = any
+export type SeparatorProps = any
 export type ContentProps = ActionBarContentProps
-export type CloseTriggerProps = ActionBar.CloseTriggerProps
+export type CloseTriggerProps = any
