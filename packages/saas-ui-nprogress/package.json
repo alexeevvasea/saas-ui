@@ -60,6 +60,8 @@
     "url": "https://storybook.saas-ui.dev"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
     "@tanem/react-nprogress": "^5.0.55"
   },
   "peerDependencies": {
@@ -69,10 +71,10 @@
     "react-dom": ">=18.0.0"
   },
   "devDependencies": {
-    "typescript": "^5.8.3",
+    "@types/react": "^19.0.12",
+    "@types/react-dom": "^19.0.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "@types/react": "^19.0.12",
-    "@types/react-dom": "^19.0.4"
+    "typescript": "^5.8.3"
   }
 }
