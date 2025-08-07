@@ -1,8 +1,9 @@
 import { Fragment, forwardRef } from 'react'
 
-import { CheckboxCard as ChakraCheckboxCard } from '@chakra-ui/react/checkbox-card'
+// import { CheckboxCard as ChakraCheckboxCard } from '@chakra-ui/react/checkbox-card'
+// TODO: Placeholder, waiting for Chakra UI v3 package release
 
-export interface CheckboxCardProps extends ChakraCheckboxCard.RootProps {
+export interface CheckboxCardProps extends Record<string, any> {
   icon?: React.ReactElement
   label?: React.ReactNode
   description?: React.ReactNode
@@ -13,46 +14,9 @@ export interface CheckboxCardProps extends ChakraCheckboxCard.RootProps {
 }
 
 export const CheckboxCard = forwardRef<HTMLInputElement, CheckboxCardProps>(
-  function CheckboxCard(props, ref) {
-    const {
-      inputProps,
-      label,
-      description,
-      icon,
-      addon,
-      indicator = <ChakraCheckboxCard.Indicator />,
-      indicatorPlacement = 'end',
-      ...rest
-    } = props
-
-    const hasContent = label || description || icon
-    const ContentWrapper = indicator ? ChakraCheckboxCard.Content : Fragment
-
-    return (
-      <ChakraCheckboxCard.Root {...rest}>
-        <ChakraCheckboxCard.HiddenInput ref={ref} {...inputProps} />
-        <ChakraCheckboxCard.Control>
-          {indicatorPlacement === 'start' && indicator}
-          {hasContent && (
-            <ContentWrapper>
-              {icon}
-              {label && (
-                <ChakraCheckboxCard.Label>{label}</ChakraCheckboxCard.Label>
-              )}
-              {description && (
-                <ChakraCheckboxCard.Description>
-                  {description}
-                </ChakraCheckboxCard.Description>
-              )}
-              {indicatorPlacement === 'inside' && indicator}
-            </ContentWrapper>
-          )}
-          {indicatorPlacement === 'end' && indicator}
-        </ChakraCheckboxCard.Control>
-        {addon && <ChakraCheckboxCard.Addon>{addon}</ChakraCheckboxCard.Addon>}
-      </ChakraCheckboxCard.Root>
-    )
+  function CheckboxCard() {
+    return null
   },
 )
 
-export const CheckboxCardIndicator = ChakraCheckboxCard.Indicator
+export const CheckboxCardIndicator = () => null
